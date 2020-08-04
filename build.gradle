@@ -6,6 +6,21 @@ plugins {
 }
 
 allprojects {
+  repositories {
+    maven {
+        url = "https://maven.aliyun.com/repository/public"
+        mavenContent { releasesOnly() }
+    }
+    maven {
+        url = "https://pixel.sankuai.com/repository/group-releases"
+        mavenContent { releasesOnly() }
+    }
+    maven {
+        url = "https://pixel.sankuai.com/repository/group-snapshots"
+        mavenContent { snapshotsOnly() }
+    }
+  }
+
   apply plugin: 'io.spinnaker.project'
 
   group = "com.netflix.spinnaker.gate"
